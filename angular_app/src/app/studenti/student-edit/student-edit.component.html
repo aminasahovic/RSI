@@ -1,0 +1,33 @@
+<div *ngIf="student.prikazi" class="modal fade show" id="exampleModalLive" tabindex="-1" aria-labelledby="exampleModalLiveLabel" aria-modal="true" role="dialog" style="display: block;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLiveLabel">Student</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="Zatvori()"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Ime</label>
+            <input class="form-control" [(ngModel)]="student.ime" placeholder="Ime">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Prezime</label>
+            <input class="form-control"  [(ngModel)]="student.prezime" placeholder="Prezime"/>
+          </div>
+  
+          <div class="mb-3">
+            <label class="form-label">Opstine</label>
+            <select class="form-control" [(ngModel)]="student.opstina_rodjenja_id">
+                <option *ngFor="let o of opstinePodaci" [value]="o.id">{{o.opis}}</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="Zatvori()">Close</button>
+          <button type="button" class="btn btn-primary" (click)="Spasi()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
